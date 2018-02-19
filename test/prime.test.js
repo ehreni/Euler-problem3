@@ -1,5 +1,13 @@
-const prime  = require('../src/prime');
+const each = require('jest-each');
 
-test('Faktor prima terbesar dari 600851475143 adalah ', () => {
-  expect(prime(600851475143)).toBe(6857);
+const isPrime  = require('../src/prime');
+
+describe('.isPrime', () => {
+  each([
+	[600851475143, 6857],
+	[49, 7],
+]).test('Faktor prima terbesar dari', (a, expected) => {
+  expect(isPrime(a)).toBe(expected);
 });
+});
+

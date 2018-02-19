@@ -1,14 +1,12 @@
-function prime(number) {
-  var number = 600851475143;
+function isPrime (number){
   var i = 2;
-  while (i<number) {
-    while (number%i === 0) {
-      (function (newnumber) {
-        number = newnumber;
-      }) (number / i)
-    }
-    i++;
+  while (number != i) {
+    if (number % i === 0) {
+      number = number / i;
+    } else {
+      i++;
+    }    
   }
   return i;
 }
-module.exports = prime;
+module.exports = isPrime;
